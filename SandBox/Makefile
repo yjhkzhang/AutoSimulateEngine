@@ -4,7 +4,7 @@ XX = g++
 CFLAGS = -std=c++17 -g 
 CLIBS = -lpthread -L ../AutoSimulate/ -lEngine
 
-INCLUDE_DIRS = -I ../AutoSimulate/ -I ../AutoSimulate/src/ -I ../AutoSimulate/src/AutoSimulate/
+INCLUDE_DIRS = -I ../AutoSimulate/ -I ../AutoSimulate/src/ -I ../AutoSimulate/src/AutoSimulate/  -I ../AutoSimulate/thirdparty/spdlog/include/
 SOURCES = $(wildcard ./src/*.cpp) $(wildcard ../AutoSimulate/src/AutoSimulate/*.cpp)
 
 TARGET = SandBox
