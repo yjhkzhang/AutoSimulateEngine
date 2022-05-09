@@ -1,11 +1,11 @@
 #used to build the libEngine.so
 
 XX = g++
-CFLAGS = -std=c++17 -g 
+CFLAGS = -std=c++17
 CLIBS = -lpthread -L ../AutoSimulate/ -lEngine
 
 INCLUDE_DIRS = -I ../AutoSimulate/ -I ../AutoSimulate/src/ -I ../AutoSimulate/src/AutoSimulate/  -I ../AutoSimulate/thirdparty/spdlog/include/
-SOURCES = $(wildcard ./src/*.cpp) $(wildcard ../AutoSimulate/src/AutoSimulate/*.cpp)
+SOURCES = $(wildcard ./src/*.cpp)
 
 TARGET = SandBox
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
@@ -20,4 +20,4 @@ ECHO:
 
 .PHONY : clean
 clean:
-	rm -rf $(OBJECTS) $(TARGET) 
+	rm -rf $(OBJECTS) $(TARGET)

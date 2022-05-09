@@ -10,6 +10,9 @@ SOURCES = $(wildcard ./src/AutoSimulate/*.cpp)
 TARGETLib = libEngine.so
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
 
+All:$(TARGETLib)
+	sudo cp $(TARGETLib) /lib/
+
 $(TARGETLib) : $(OBJECTS)
 	$(XX) $(CFLAGS) $^ -o $@ $(CLIBS)
 $(OBJECTS) : %.o : %.cpp
@@ -21,3 +24,4 @@ ECHO:
 .PHONY : clean
 clean:
 	rm -rf $(OBJECTS) $(TARGETLib) 
+	sudo rm /lib/libEngine.so
