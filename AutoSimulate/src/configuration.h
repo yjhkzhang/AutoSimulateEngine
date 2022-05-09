@@ -1,0 +1,1 @@
+#define AS_PLATFORM_LINUX
