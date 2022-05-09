@@ -1,7 +1,9 @@
 #pragma once
 
+#include "Events/MouseEvent.h"
+#include "Events/KeyEvent.h"
 #include "AutoSimulate/Window.h"
-
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 namespace AutoSimulate {
