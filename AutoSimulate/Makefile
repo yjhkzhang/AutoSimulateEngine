@@ -4,8 +4,8 @@ XX = g++
 CFLAGS = -std=c++17 -shared -fPIC  
 CLIBS = -lpthread
 
-INCLUDE_DIRS = -I ./ -I./src/ -I ./src/AutoSimulate/ -I ./thirdparty/spdlog/include/
-SOURCES = $(wildcard ./src/AutoSimulate/*.cpp)
+INCLUDE_DIRS = -I ./ -I./src/ -I ./src/AutoSimulate/ -I ./thirdparty/spdlog/include/ -I./thirdparty/glfw/include
+SOURCES = $(wildcard ./src/AutoSimulate/*.cpp) $(wildcard ./src/Platforms/*.cpp)
 
 TARGETLib = libEngine.so
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
