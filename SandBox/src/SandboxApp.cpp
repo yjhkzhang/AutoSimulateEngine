@@ -1,14 +1,34 @@
 #include "AutoSimulate.h"
 
-class SandBox : public AutoSimulate::Application
+class ExampleLayer : public AutoSimulate::Layer
 {
 public:
-	SandBox()
+	ExampleLayer()
+		: Layer("Example")
 	{
-
 	}
 
-	~SandBox()
+	void OnUpdate() override
+	{
+		HZ_INFO("ExampleLayer::Update");
+	}
+
+	void OnEvent(AutoSimulate::Event& event) override
+	{
+		HZ_TRACE("{0}", event);
+	}
+
+};
+
+class Sandbox : public AutoSimulate::Application
+{
+public:
+	Sandbox()
+	{
+		PushLayer(new ExampleLayer());
+	}
+
+	~Sandbox()
 	{
 
 	}
@@ -17,5 +37,5 @@ public:
 
 AutoSimulate::Application* AutoSimulate::CreateApplication()
 {
-	return new SandBox();
+	return new Sandbox();
 }
