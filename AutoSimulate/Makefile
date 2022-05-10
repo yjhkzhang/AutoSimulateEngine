@@ -4,8 +4,8 @@ XX = g++
 CFLAGS = -std=c++17 -shared -fPIC  
 CLIBS = -lpthread
 
-INCLUDE_DIRS = -I ./ -I./src/ -I ./src/AutoSimulate/ -I ./thirdparty/spdlog/include/ -I./thirdparty/glfw/include -I./thirdparty/Glad/include
-SOURCES = $(wildcard ./src/AutoSimulate/*.cpp) $(wildcard ./src/Platforms/*.cpp) $(wildcard ./thirdparty/Glad/src/*.cpp)
+INCLUDE_DIRS = -I ./ -I./src/ -I ./src/AutoSimulate/ -I ./thirdparty/spdlog/include/ -I./thirdparty/glfw/include -I./thirdparty/Glad/include -I ./thirdparty/imgui/
+SOURCES = $(wildcard ./src/AutoSimulate/*.cpp) $(wildcard ./src/Platforms/*.cpp) $(wildcard ./src/AutoSimulate/ImGui/*.cpp) $(wildcard ./thirdparty/Glad/src/*.cpp) $(wildcard ./src/Platforms/OpenGL/*.cpp) $(wildcard  ./thirdparty/imgui/*.cpp)
 
 TARGETLib = libEngine.so
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))

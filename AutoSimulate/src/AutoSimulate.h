@@ -5,6 +5,7 @@
 #include "AutoSimulate/Log.h"
 #include "AutoSimulate/Layer.h"
 #include "configuration.h"
+#include "AutoSimulate/ImGui/ImGuiLayer.h"
 // ---Entry Point---------------------
 #include "AutoSimulate/EntryPoint.h"
 // -----------------------------------
